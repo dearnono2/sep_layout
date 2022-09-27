@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 보이지 않게 멀리 보내는 클래스 */
+.hidden {
+  position: absolute;
+  top: -99999px;
+  opacity: 0;
+}
+
+/* float 초기화 */
+.wrap::after {
+  content: '';
+  display: block;
+  clear: both;
+}
