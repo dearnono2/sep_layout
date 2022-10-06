@@ -5,16 +5,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GALLERY</title>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <script src="https://kit.fontawesome.com/a9d0d508cd.js" crossorigin="anonymous"></script>
   <script defer src="js/main.js"></script>
+  <script defer src="js/flickr.js"></script>
+
+
 </head>
 <body>
     <!-- header -->
     <header id="header_sub">
       <div class="inner">
         <!-- 로고에 a태그를 넣는 이유 = 로고를 누르면 메인페이지로 이동 -->
-        <h1><a href="#">DECODELAB</a></h1>
+        <h1><a href="index.html">DECODELAB</a></h1>
   
         <!-- 웹 메뉴-->
         <nav class="menuWeb">
@@ -42,7 +46,7 @@
   
         <nav class="menuMo">
           <h1>
-            <a href="#">DECODELAB</a>
+            <a href="index.html">DECODELAB</a>
             <span>UI/UX DEVELOPMENT INSTITUTE</span>
           </h1>
   
@@ -59,10 +63,30 @@
     <!-- // header -->
   
     <!-- section content -->
-    <section class="content gallery">
+    <section class="content">
       <div class="sub_vidual"></div>
       <div class="inner">
         <h1>GALLERY <span>갤러리</span></h1>
+
+        <div id="gallery">
+          <article id="searchBox">
+            <input type="text" id="search" placeholder="검색어 입력">
+            <button class="btnSearch">Search</button>
+          </article>
+          <article id="wrap">
+            <img src="img/6.gif" class="loading" alt="">
+            <ul id="list">
+              <!-- <li class="item">
+                <div>
+                  <a href="큰이미지 주소">
+                    <img src="썸네일" alt="">
+                  </a>
+                  <p>이미지 제목</p>
+                </div>
+              </li> -->
+            </ul>
+          </article>
+        </div>
       </div>
     </section>
     <!-- // section content -->

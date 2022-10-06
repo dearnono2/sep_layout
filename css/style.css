@@ -474,80 +474,49 @@ a {
 .department .sub_vidual {
   background: url(../img/brand1.jpg) no-repeat center/cover;
 }
-.department .inner .division {
+.department .inner .wrap {
   width: 100%;
-  height: 600px;
-  background: url(../img/bgDIvision.jpg) no-repeat center/contain;
 }
-.department .inner .division .div_tree {
-  position: absolute;
-  top: -9999px;
-  opacity: 0;
-  transition: 1s;
-}
-.department .inner .division .div_tree li span {
+.department .inner .wrap::after {
+  content: "";
   display: block;
-  width: 40%;
-  height: 50px;
-  background: #111;
-  font: bold 13px/50px "arial";
-  color: #fff;
-  text-align: center;
-  border-radius: 25px;
-  margin-bottom: 20px;
+  clear: both;
+}
+.department .inner .wrap article {
+  width: 380px;
+  float: left;
+  margin-right: 20px;
   position: relative;
+  margin-top: 50px;
 }
-.department .inner .division .div_tree li span::after {
-  content: "";
-  display: block;
-  width: 1px;
-  height: 1165px;
-  background: #aaa;
-  position: absolute;
-  top: 50px;
-  left: 50px;
+.department .inner .wrap article:nth-of-type(3n) {
+  margin-right: 0;
 }
-.department .inner .division .div_tree li ul li span {
-  background: #666;
-  transform: translateX(70px);
+.department .inner .wrap article .pic {
+  width: 100%;
+  height: 380px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 20px;
 }
-.department .inner .division .div_tree li ul li span::before {
-  content: "";
-  display: block;
-  width: 20px;
-  height: 1px;
-  background: #aaa;
-  position: absolute;
-  top: 50%;
-  left: -20px;
+.department .inner .wrap article .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.department .inner .division .div_tree li ul li:nth-of-type(1) span::after {
-  display: none;
+.department .inner .wrap article h2 {
+  text-align: center;
+  margin-bottom: 20px;
 }
-.department .inner .division .div_tree li ul li:nth-of-type(2) span::after {
-  display: none;
+.department .inner .wrap article h2 a {
+  font: bold 25px/1 "arial";
+  color: #555;
 }
-.department .inner .division .div_tree li ul li:nth-of-type(3) span::after {
-  height: 115px;
-}
-.department .inner .division .div_tree li ul li:nth-of-type(4) span::after {
-  height: 185px;
-}
-.department .inner .division .div_tree li ul li:nth-of-type(5) span::after {
-  height: 115px;
-}
-.department .inner .division .div_tree li ul li:nth-of-type(6) span::after {
-  height: 185px;
-}
-.department .inner .division .div_tree li ul li:nth-of-type(7) span::after {
-  height: 115px;
-}
-.department .inner .division .div_tree li ul li ul li span {
-  background: #999;
-  transform: translateX(140px);
-}
-.department .inner .division .div_tree li ul li ul li span::after {
-  display: none;
+.department .inner .wrap article p {
+  text-align: center;
+  margin-bottom: 50px;
+  font: 16px/1 "arial";
+  color: #aaa;
 }
 
 @media screen and (max-width: 1179px) {
@@ -566,10 +535,142 @@ a {
     opacity: 1;
   }
 }
-.gallery .sub_vidual {
-  background: url(../img/brand2.jpg) no-repeat center/cover;
+#gallery #searchBox {
+  width: 100%;
+  padding: 50px;
+  font-size: 0;
+}
+#gallery #searchBox #search {
+  width: 300px;
+  height: 30px;
+  border: 1px solid #333;
+  padding-left: 10px;
+}
+#gallery #searchBox .btnSearch {
+  width: 80px;
+  height: 30px;
+  background: #333;
+  font: bold 12px/30px "arial";
+  color: #fff;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  vertical-align: top;
+}
+#gallery #wrap {
+  width: 100%;
+  padding: 50px;
+}
+#gallery #wrap .loading {
+  width: 100px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 1s;
+}
+#gallery #wrap .loading.off {
+  opacity: 0;
+}
+#gallery #wrap #list {
+  width: 100%;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 1s;
+}
+#gallery #wrap #list.on {
+  opacity: 1;
+  transform: translateY(0);
+}
+#gallery #wrap #list::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#gallery #wrap #list li {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+#gallery #wrap #list li div {
+  width: 100%;
+  padding: 20px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+#gallery #wrap #list li div a > img {
+  width: 100%;
+  filter: grayscale(100%);
+}
+#gallery #wrap #list li div p {
+  font: 12px/1.2 "arial";
+  color: #777;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#gallery #wrap #list li div span {
+  display: block;
+  align-items: center;
+  margin-top: 10px;
+}
+#gallery #wrap #list li div span > img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+#gallery #wrap #list li div span strong {
+  font: 11px/1 "arial";
+  color: orange;
+}
+#gallery #wrap #list li div:hover a > img {
+  filter: grayscale(0);
 }
 
+aside {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+aside .con {
+  width: 100%;
+  height: 100%;
+}
+aside .con img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+aside .close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+}
+
+@media screen and (max-width: 999px) {
+  #gallery #wrap #list li {
+    width: 33.3333333333%;
+  }
+}
+@media screen and (max-width: 749px) {
+  #gallery #wrap #list li {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 439px) {
+  #gallery #wrap #list li {
+    width: 100%;
+  }
+}
 .join .sub_vidual {
   background: url(../img/insta1.jpg) no-repeat center/cover;
 }
@@ -580,6 +681,67 @@ a {
 
 .youtube .sub_vidual {
   background: url(../img/insta7.jpg) no-repeat center/cover;
+}
+.youtube .inner .vidList {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+}
+.youtube .inner .vidList article {
+  width: 48%;
+  height: 400px;
+  border: 1px solid #555;
+  margin-bottom: 40px;
+}
+.youtube .inner .vidList article .pic {
+  display: block;
+  width: 100%;
+  height: 60%;
+}
+.youtube .inner .vidList article .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.youtube .inner .vidList article .con {
+  width: 100%;
+  height: 40%;
+  padding: 20px;
+}
+.youtube .inner .vidList article .con h2 {
+  font: bold 20px/1.2 "arial";
+  color: #444;
+  margin-bottom: 15px;
+}
+.youtube .inner .vidList article .con p {
+  font: 14px/1.4 "arial";
+  color: #666;
+}
+.youtube .inner .vidList article .con span {
+  font: bold 16px/1 "arial";
+  color: orange;
+}
+.youtube .inner figure.pop {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  padding: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.youtube .inner figure.pop .btnClose {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  color: #fff;
+  cursor: pointer;
 }
 
 /* header 영역 */
